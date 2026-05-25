@@ -1,0 +1,1 @@
+# minitaller-thingsboard-iot-asset-management

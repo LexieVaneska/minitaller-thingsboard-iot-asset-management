@@ -20,6 +20,10 @@ https://thingsboard.cloud
 
 Regístrese con Google, GitHub, Apple, o con correo y contraseña. Una vez dentro verá el panel principal con el menú lateral izquierdo.
 
+<p align="center">
+  <img src="./img/login.png" alt="Pantalla de inicio de sesión">
+</p>
+
 ---
 
 ## 3. Crear Device Profile
@@ -31,14 +35,25 @@ Diríjase a:
 ```
 Profiles → Device profiles → + → Create new device profile
 ```
+<p align="center">
+  <img src="./img/crear_device_profile.png" alt="Crear device profile">
+</p>
 
 ### 3.1 Device profile details
 
 Asigne el nombre `CuartoFrio` y deje los demás campos en blanco. Haga clic en **Next: Transport configuration**.
 
+<p align="center">
+  <img src="./img/config_dev_prof.png" alt="Crear device profile">
+</p>
+
 ### 3.2 Transport configuration
 
 En **Transport type** seleccione `MQTT`. Esto indica que los devices con este perfil se comunicarán usando el protocolo MQTT. Deje el resto de configuraciones por defecto y haga clic en **Next: Alarm rules**.
+
+<p align="center">
+  <img src="./img/config_dev_prof2.png" alt="Crear device profile">
+</p>
 
 ### 3.3 Alarm rules
 
@@ -57,6 +72,9 @@ Diríjase a:
 ```
 Entities → Devices → + Add device → Add new device
 ```
+<p align="center">
+  <img src="./img/add_new_device.png" alt="Crear device profile">
+</p>
 
 Complete el formulario con los siguientes datos:
 
@@ -77,6 +95,10 @@ Copy access token
 
 Guarde el token. Lo necesitará en el siguiente paso.
 
+<p align="center">
+  <img src="./img/boton_copy_access_token.png" alt="accestoken">
+</p>
+
 > **Importante:** no comparta este token. Cualquiera que lo tenga puede publicar datos en su device.
 
 ---
@@ -88,10 +110,14 @@ Para modelar el sistema físico se utilizará una simulación en **Wokwi**. Use 
 Solo es necesario agregar el Access Token del device recién creado. Para obtenerlo, abra el device en ThingsBoard, seleccione **Copy access token** y péguelo en el archivo `main.py`, en la variable de la línea 13:
 
 ```python
-ACCESS_TOKEN = "PEGAR_TOKEN_AQUI"
+ACCESS_TOKEN = ""
 ```
 
 Presione ▶ para iniciar la simulación. Espere 10-15 segundos mientras el ESP32 se conecta al WiFi y al broker MQTT.
+
+<p align="center">
+  <img src="./img/wokwi.png" alt="accestoken">
+</p>
 
 ## 6. Verificar telemetría
 
@@ -124,6 +150,9 @@ Diríjase a:
 ```
 Dashboards → + Add dashboard → Import dashboard
 ```
+<p align="center">
+  <img src="./img/create_dashboard.png" alt="accestoken">
+</p>
 
 Suba el archivo proporcionado:
 

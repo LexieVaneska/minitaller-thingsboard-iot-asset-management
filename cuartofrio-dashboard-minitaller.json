@@ -1,10 +1,11 @@
 {
-  "title": "CuartoFrio_Dashboard_Alex",
+  "title": "CuartoFrio-Dashboard",
+  "name": "CuartoFrio-Dashboard",
   "image": null,
   "mobileHide": false,
   "mobileOrder": null,
   "configuration": {
-    "description": "",
+    "description": "Monitoreo y control remoto de un cuarto frío inteligente. Visualiza en tiempo real la temperatura, el setpoint y el estado de alarma del sistema, con capacidad de activar o desactivar el enfriamiento desde la interfaz.",
     "widgets": {
       "aab5182f-01f1-3454-2cd9-25b13de3dad9": {
         "typeFullFqn": "system.analogue_gauges.temperature_radial_gauge_canvas_gauges",
@@ -14,9 +15,9 @@
         "config": {
           "datasources": [
             {
-              "type": "device",
+              "type": "entity",
               "name": "",
-              "deviceId": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13",
+              "entityAliasId": "169570ec-5272-a19a-018a-c9345bcea9ca",
               "dataKeys": [
                 {
                   "name": "temperature",
@@ -193,9 +194,9 @@
         "config": {
           "datasources": [
             {
-              "type": "device",
+              "type": "entity",
               "name": "",
-              "deviceId": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13",
+              "entityAliasId": "169570ec-5272-a19a-018a-c9345bcea9ca",
               "dataKeys": [
                 {
                   "name": "alarmStatus",
@@ -354,9 +355,9 @@
         "config": {
           "datasources": [
             {
-              "type": "device",
+              "type": "entity",
               "name": "",
-              "deviceId": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13",
+              "entityAliasId": "169570ec-5272-a19a-018a-c9345bcea9ca",
               "dataKeys": [
                 {
                   "name": "coolingStatus",
@@ -505,9 +506,9 @@
         "config": {
           "datasources": [
             {
-              "type": "device",
+              "type": "entity",
               "name": "",
-              "deviceId": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13",
+              "entityAliasId": "169570ec-5272-a19a-018a-c9345bcea9ca",
               "dataKeys": [
                 {
                   "name": "temperature",
@@ -1019,8 +1020,8 @@
           "borderRadius": "4px",
           "datasources": [],
           "targetDevice": {
-            "type": "device",
-            "deviceId": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13"
+            "type": "entity",
+            "entityAliasId": "169570ec-5272-a19a-018a-c9345bcea9ca"
           }
         },
         "row": 0,
@@ -1194,7 +1195,20 @@
         }
       }
     },
-    "entityAliases": {},
+    "entityAliases": {
+      "169570ec-5272-a19a-018a-c9345bcea9ca": {
+        "id": "169570ec-5272-a19a-018a-c9345bcea9ca",
+        "alias": "SensorCuartoFrio",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "3c8fda40-58c8-11f1-abf3-cbbdf6c67c13"
+          }
+        }
+      }
+    },
     "filters": {},
     "timewindow": {
       "selectedTab": 0,
@@ -1217,6 +1231,5 @@
       "toolbarAlwaysOpen": true
     }
   },
-  "name": "CuartoFrio_Dashboard_Alex",
   "resources": []
 }

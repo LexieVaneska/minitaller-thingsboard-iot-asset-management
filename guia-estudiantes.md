@@ -180,10 +180,72 @@ Ventilador OFF → temperature <= 3.0°C
 
 ---
 
+## Parte 3 — Agregar la tabla de alarmas al dashboard
+
+Para visualizar las alarmas directamente en el dashboard, diríjase a:
+
+```
+Dashboards → CuartoFrio-Dashboard
+```
+
+### 3.1 Activar el modo edición
+
+Haga clic en **Edit mode** en la barra superior.
+
+<p align="center">
+  <img src="./img/paso1.png" alt="Edit mode">
+</p>
+
+### 3.2 Agregar un nuevo widget
+
+Haga clic en **+ Add widget**.
+
+<p align="center">
+  <img src="./img/paso2.png" alt="Add widget">
+</p>
+
+### 3.3 Seleccionar el bundle
+
+En la ventana de selección, diríjase al bundle **Tables**.
+
+<p align="center">
+  <img src="./img/paso3.png" alt="Widgets bundles">
+</p>
+
+### 3.4 Seleccionar Alarms table
+
+Seleccione el widget **Alarms table**.
+
+<p align="center">
+  <img src="./img/paso4.png" alt="Alarms table widget">
+</p>
+
+### 3.5 Configurar el widget
+
+Configure los siguientes campos:
+
+- **Alarm source:** cambie de `Device` a `Entity alias` y seleccione `SensorCuartoFrio`
+- **Alarm status list:** seleccione únicamente `Active` y `Cleared`
+- **Alarm severity list:** seleccione únicamente `Critical`
+- **Time window:** deje `Realtime - last 30 days`
+
+<p align="center">
+  <img src="./img/paso5.png" alt="Alarm table configuration">
+</p>
+
+Haga clic en **Add** y luego en **Save**. El dashboard ahora muestra la tabla de alarmas con el historial de activaciones y el estado actual de cada una.
+
+<p align="center">
+  <img src="./img/paso6.png" alt="Dashboard con tabla de alarmas">
+</p>
+<p align="center">
+  <img src="./img/notificaciones.png" alt="notif">
+</p>
+
 ## Parte 3 — Entregables
 
 Tome capturas de pantalla que evidencien:
 
 1. La alarma activa en la pestaña **Alarms** del device
 2. La notificación en la campanita de ThingsBoard
-3. El dashboard con `coolingStatus: true` y `mode: AUTO`
+3. El dashboard con `coolingStatus: true`, `mode: AUTO` y la tabla de alarmas

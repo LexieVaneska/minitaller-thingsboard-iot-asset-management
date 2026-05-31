@@ -93,7 +93,7 @@ Abra el device recién creado y haga clic en:
 Copy access token
 ```
 
-Guarde el token. Lo necesitará en el siguiente paso.
+Guarde el token. Lo necesitará más adelante. 
 
 <p align="center">
   <img src="./img/boton_copy_access_token.png" alt="accestoken">
@@ -103,45 +103,7 @@ Guarde el token. Lo necesitará en el siguiente paso.
 
 ---
 
-## 5. Configurar Wokwi
-
-Para modelar el sistema físico se utilizará una simulación en **Wokwi**. Use el proyecto disponible en [este enlace](https://wokwi.com/projects/465060950713837569), que ya incluye el circuito con el ESP32, el sensor DHT22 y los tres LEDs conectados.
-
-Solo es necesario agregar el Access Token del device recién creado. Para obtenerlo, abra el device en ThingsBoard, seleccione **Copy access token** y péguelo en el archivo `main.py`, en la variable de la línea 13:
-
-```python
-ACCESS_TOKEN = ""
-```
-
-Presione ▶ para iniciar la simulación. Espere 10-15 segundos mientras el ESP32 se conecta al WiFi y al broker MQTT.
-
-<p align="center">
-  <img src="./img/wokwi.png" alt="accestoken">
-</p>
-
-## 6. Verificar telemetría
-
-Antes de abrir el dashboard, confirme que los datos están llegando correctamente. En ThingsBoard diríjase a:
-
-```
-Entities → Devices → su device → Latest telemetry
-```
-
-Deben aparecer las siguientes variables actualizándose cada segundo:
-
-| Variable | Descripción |
-|---|---|
-| `temperature` | Temperatura actual del cuarto frío (°C) |
-| `setpoint` | Límite máximo permitido (4.0°C) |
-| `alarmStatus` | `true` si hay alarma activa |
-| `coolingStatus` | `true` si el enfriamiento está activo |
-| `mode` | Modo de operación (`MANUAL`) |
-
-El device debe aparecer con estado **Active** en la lista de devices.
-
----
-
-## 7. Importar el dashboard
+## 5. Importar el dashboard
 
 El dashboard ya está configurado con todos los widgets necesarios. Solo debe importarlo y conectarlo a su device.
 
@@ -168,7 +130,7 @@ El dashboard aparecerá en su lista. Ábralo para continuar.
 
 ---
 
-## 8. Conectar el dashboard al device
+## 6. Conectar el dashboard al device
 
 El dashboard importado debe redirigirse al device propio de cada estudiante.
 
@@ -188,7 +150,25 @@ Guarde. El dashboard ahora muestra los datos de su propio device.
 
 ---
 
-## 9. Resultado final
+## 7. Configurar Wokwi
+
+Para modelar el sistema físico se utilizará una simulación en **Wokwi**. Use el proyecto disponible en [este enlace](https://wokwi.com/projects/465060950713837569), que ya incluye el circuito con el ESP32, el sensor DHT22 y los tres LEDs conectados.
+
+Solo es necesario agregar el Access Token del device recién creado. Para obtenerlo, abra el device en ThingsBoard, seleccione **Copy access token** y péguelo en el archivo `main.py`, en la variable de la línea 13:
+
+```python
+ACCESS_TOKEN = ""
+```
+
+Presione ▶ para iniciar la simulación. Espere 10-15 segundos mientras el ESP32 se conecta al WiFi y al broker MQTT.
+
+<p align="center">
+  <img src="./img/wokwi.png" alt="accestoken">
+</p>
+
+---
+
+## 8. Resultado final
 
 Con Wokwi corriendo y el dashboard configurado, observe la siguiente secuencia:
 

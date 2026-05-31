@@ -162,6 +162,10 @@ cuartofrio-dashboard-minitaller.json
 
 El dashboard aparecerá en su lista. Ábralo para continuar.
 
+<p align="center">
+  <img src="./img/dashboard-1.png" alt="accestoken">
+</p>
+
 ---
 
 ## 8. Conectar el dashboard al device
@@ -172,12 +176,13 @@ Con el dashboard abierto, active el modo edición y haga clic en **Aliases** en 
 ```
 Edit mode → Aliases
 ```
-
-Verá un alias existente. Edítelo y cambie el device al suyo:
-
+Verá un alias existente llamado `SensorCuartoFrio`. Haga clic en el ícono de edición y en el campo **Device** reemplace el device actual por el suyo:
 ```
 ESP32-CuartoFrio-TuNombre
 ```
+<p align="center">
+  <img src="./img/aliases.png" alt="accestoken">
+</p>
 
 Guarde. El dashboard ahora muestra los datos de su propio device.
 

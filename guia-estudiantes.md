@@ -86,9 +86,30 @@ temperature greater than 4
   <img src="./img/alarm_condition.png" alt="Alarm condition preview">
 </p>
 
+### 1.5 Agregar la condición de limpieza
+
+En la sección **Clear condition**, haga clic en **Add clear condition** y configure el filtro de la misma forma que en el paso anterior, pero con la operación inversa:
+
+- **Argument:** `temperature`
+- **Value type:** `Numeric`
+- **Operation:** `less than or equal to`
+- **Value source:** `Static`
+- **Value:** `4`
+
+Esto hace que la alarma cambie de estado **Active → Cleared** automáticamente cuando la temperatura baje a 4°C o menos.
+
+Haga clic en **Apply** para guardar la regla completa.
+<p align="center">
+  <img src="./img/clear.png" alt="Alarm condition preview">
+</p>
+
 Haga clic en **Save** y luego en **Add** para guardar la regla de alarma completa.
 
-### 1.4 Verificar la alarma
+<p align="center">
+  <img src="./img/alarma_creada.png" alt="Alarm condition preview">
+</p>
+
+### 1.6 Verificar la alarma
 
 Con Wokwi corriendo, espere a que la temperatura supere 4°C. En ThingsBoard verá:
 

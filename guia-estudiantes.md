@@ -38,22 +38,55 @@ Abra el perfil y diríjase a la pestaña **Alarm rules**.
 
 ### 1.2 Crear la regla de alarma
 
-Haga clic en **+ Add alarm rule**. Complete los campos de la siguiente forma:
+Haga clic en **+ Add alarm rule**. Complete el campo **Alarm type** con:
 
-- **Alarm type:** `Temperatura fuera de setpoint`
-- **Severity:** `Critical`
+```
+HighTempAlarm
+```
 
-### 1.3 Agregar la condición
+### 1.3 Agregar el argumento
 
-Haga clic en **+ Add condition** y luego en **+ Add key filter**. Configure el filtro:
+En la sección **Arguments**, haga clic en **Add argument** y complete los campos:
 
-- **Key type:** `Time series`
-- **Key:** `temperature`
+- **Entity type:** `Current entity`
+- **Argument type:** `Latest telemetry`
+- **Time series key:** `temperature`
+- **Argument name:** `temperature`
+- **Default value:** dejar vacío
+
+Haga clic en **Add**.
+
+<p align="center">
+  <img src="./img/guia-2.png" alt="Argument settings">
+</p>
+
+### 1.4 Agregar la condición de disparo
+
+En la sección **Trigger conditions**, haga clic en **Add trigger condition**. Seleccione **Severity:** `Critical` y haga clic en **Add condition**.
+
+En el diálogo **Alarm condition**, haga clic en **Add argument filter** y configure:
+
+- **Argument:** `temperature`
 - **Value type:** `Numeric`
-- **Operation:** `Greater than`
+- **Operation:** `greater than`
+- **Value source:** `Static`
 - **Value:** `4`
 
-Haga clic en **Add** y luego guarde todos los cambios.
+<p align="center">
+  <img src="./img/add-argument.png" alt="Add argument filter">
+</p>
+
+El **Filter preview** debe mostrar:
+
+```
+temperature greater than 4
+```
+
+<p align="center">
+  <img src="./img/alarm_condition.png" alt="Alarm condition preview">
+</p>
+
+Haga clic en **Save** y luego en **Add** para guardar la regla de alarma completa.
 
 ### 1.4 Verificar la alarma
 
